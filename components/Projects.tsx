@@ -23,7 +23,7 @@ const dataAnalystProjects: Project[] = [
     description:
       "Stop letting 'data debt' compromise your analytics. Data Health Governor automates the tedious cycle of database cleanup by combining LLM-powered detection with a 'Human-in-the-Loop' workflow for ironclad data integrity.",
     tags: ["n8n", "PostgreSQL", "Groq", "Google Gemini", "Google Docs/Drive"],
-    image: "https://drive.google.com/uc?export=view&id=1oBuGBpL5GjfuyTvsXHbcFQ1Rijrd-LnN",
+    image: "/images/DataGovernance.png",
     githubUrl: "https://github.com/Krishnakant25/DATA-ANALYTICS/tree/main/Data_Health_Governor",
     period: "2025",
     type: "Data Analytics",
@@ -34,7 +34,7 @@ const dataAnalystProjects: Project[] = [
     description:
       "Data-driven clarity for the green revolution: AtliQ Motors EV Analytics provides a 360-degree strategic view of the Indian EV landscape, transforming raw registration and revenue data into actionable expansion roadmaps.",
     tags: ["Python", "FastAPI", "Power BI"],
-    image: "https://drive.google.com/uc?export=view&id=1WXNbSmAsBaEcaoH9jyIQxjjGFPSU3qgy",
+    image: "/images/AtliQMotors.png",
     liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiZDVlNWRiMTgtMzM2OC00YmJiLWJkMTItYjY3MGVmZTU0NjZhIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
     presentationUrl: "https://drive.google.com/file/d/15EpP-pMTuFO0bkFuIf2s4W0mCZTKodgL/view",
     period: "2025",
@@ -46,7 +46,7 @@ const dataAnalystProjects: Project[] = [
     description:
       "From p-values to LLMs: this project bridges the gap between deep statistical exploration and the future of AI-driven BI. After identifying key margin disparities in a massive retail dataset, I deployed a local Llama 3.3 agent to automate SQL and visualization via natural language.",
     tags: ["SQL", "PostgreSQL", "Tableau", "Python", "Pandas"],
-    image: "https://drive.google.com/uc?export=view&id=1cSJlIhnVFzauhxN6uvN2J4V8D_8waXyd",
+    image: "/images/VendorsSales.png",
     githubUrl: "https://github.com/krishnakantsahu/sales-dashboard",
     period: "2026",
     type: "Data Analytics",
@@ -61,7 +61,7 @@ const genAIProjects: Project[] = [
     description:
       "Bridging the gap between vast financial datasets and instant insights, this system achieves an 86.7% Hit Rate@5 using hybrid search to replace hours of manual research with sub-300ms retrieval. By fusing BM25 precision with semantic embeddings, it provides a scalable, cost-efficient engine for context-aware investment research and enterprise Q&A.",
     tags: ["Hugging Face Transformers", "Pinecone", "Retrieval-Augmented Generation", "Python", "LangChain", "Wikipedia API", "ArXiv API"],
-    image: "https://drive.google.com/uc?export=view&id=181q2zpqZ0WWa5U4c0_-Cy9DL49P5qsXn",
+    image: "/images/Thumbnail_Hybrid_Search.png",
     liveUrl: "https://krishnakant25-generativeai-projects-hybrid-searchapp-9h0a6s.streamlit.app/",
     githubUrl: "https://github.com/krishnakantsahu/ai-voice-agent",
     period: "2026",
@@ -73,7 +73,7 @@ const genAIProjects: Project[] = [
     description:
       "Bridging the gap between natural language and relational databases, this dual-engine (SQLite/MySQL) interface maintains full conversational context while ensuring transparent, read-only query execution. It provides a secure, localized environment pre-configured for Indian business entities.",
     tags: ["Python", "LangChain", "GROQ – Llama 3.3 70B", "LangChain SQL Agent", "Streamlit", "SQLite / MySQL"],
-    image: "https://drive.google.com/uc?export=view&id=1tnEiuC-NksG40HBBVx4neBdKa6iVq0Zh",
+    image: "/images/Chat_SQLDB.png",
     liveUrl: "https://generativeaiprojects-vdzwjgbgfzskbwyntgmezc.streamlit.app/",
     githubUrl: "https://github.com/Krishnakant25/GenerativeAI_Projects/tree/main/Chat_With_SQLDB",
     period: "2026",
