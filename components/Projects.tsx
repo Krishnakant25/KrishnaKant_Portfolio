@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 
 interface Project {
   num: string;
@@ -117,14 +116,26 @@ function ProjectList({ projects }: { projects: Project[] }) {
               {p.num}
             </span>
 
-            {/* Thumbnail */}
-            <div className="relative h-28 overflow-hidden bg-[var(--surface)] w-full md:w-44 shrink-0">
-              <Image
+            {/* Thumbnail — plain img works with Google Drive, Unsplash, any URL */}
+            <div className="relative h-28 overflow-hidden bg-[var(--surface)] w-full md:w-44 shrink-0 flex items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={p.image}
                 alt={`${p.title} preview`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 90vw, 180px"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  target.style.display = "none";
+                  const parent = target.parentElement;
+                  if (parent && !parent.querySelector(".img-fallback")) {
+                    const fb = document.createElement("div");
+                    fb.className = "img-fallback w-full h-full flex items-center justify-center";
+                    fb.style.cssText = "background:var(--border);";
+                    fb.innerHTML = `<span style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--text-muted);letter-spacing:0.1em">${p.num}</span>`;
+                    parent.appendChild(fb);
+                  }
+                }}
               />
             </div>
 

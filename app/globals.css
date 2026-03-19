@@ -112,22 +112,28 @@ body {
   50% { opacity: 1; transform: scale(1.4); }
 }
 
-/* ── Light mode orb ────────────────────────────────── */
+/* ── Light mode orb — soft slate/indigo, suits light backgrounds ── */
 :root:not(.dark) .planet-orb {
   background: radial-gradient(
     ellipse at 30% 35%,
-    #5aad80 0%,
-    #2d7a50 20%,
-    #134a2a 45%,
-    #080f0b 70%,
-    transparent 85%
+    #c8d8e8 0%,
+    #9ab0c8 18%,
+    #6688a8 38%,
+    #3a5068 60%,
+    transparent 82%
   );
   box-shadow:
-    inset -60px -40px 80px rgba(0,0,0,0.7),
-    inset 30px 20px 60px rgba(80,160,110,0.2),
-    0 0 150px rgba(45,107,74,0.18),
-    0 0 300px rgba(26,58,42,0.1);
-  opacity: 0.75;
+    inset -60px -40px 80px rgba(30,50,80,0.35),
+    inset 30px 20px 60px rgba(160,190,220,0.2),
+    0 0 120px rgba(100,140,180,0.12),
+    0 0 240px rgba(80,110,150,0.06);
+  opacity: 0.5;
+}
+:root:not(.dark) .planet-orb::after {
+  background: rgba(255,255,255,0.9);
+  box-shadow:
+    0 0 6px 3px rgba(255,255,255,0.5),
+    0 0 16px 6px rgba(200,220,255,0.2);
 }
 
 /* ── Section Label ─────────────────────────────────── */

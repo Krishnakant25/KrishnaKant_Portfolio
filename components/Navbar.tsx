@@ -31,9 +31,9 @@ export default function Navbar() {
       }`}
     >
       <nav className="page-padding flex items-center justify-between h-14 max-w-screen-xl mx-auto">
-        {/* Year / Logo */}
+        {/* ── FIX 1: Year updated to 2026 ── */}
         <span className="font-mono-custom text-[11px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
-          2025
+          2026
         </span>
 
         {/* Desktop nav */}
@@ -60,9 +60,9 @@ export default function Navbar() {
             </button>
           )}
 
-          {/* Label */}
+          {/* ── FIX 2: Label updated ── */}
           <span className="hidden md:block font-mono-custom text-[10px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
-            UI·UX Portfolio
+            Data Analytics &amp; AI Engineering
           </span>
 
           {/* Mobile hamburger */}

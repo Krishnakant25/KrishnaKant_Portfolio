@@ -32,6 +32,34 @@ const skills = [
   "Git", "Docker", "Linux",
 ];
 
+// ── FIX: Capability pillars replacing stats boxes ──────────────────────────
+const pillars = [
+  {
+    label: "Data Analytics",
+    color: "var(--accent-sage)",
+    bg: "rgba(122,171,138,0.06)",
+    border: "rgba(122,171,138,0.25)",
+    items: ["Dashboards", "SQL Pipelines", "Business Insights"],
+    icon: "◈",
+  },
+  {
+    label: "AI & GenAI Systems",
+    color: "var(--accent)",
+    bg: "rgba(201,169,110,0.06)",
+    border: "rgba(201,169,110,0.25)",
+    items: ["RAG Systems", "AI Agents", "LLM Apps"],
+    icon: "◆",
+  },
+  {
+    label: "Business Decision Making",
+    color: "#a78bfa",
+    bg: "rgba(167,139,250,0.06)",
+    border: "rgba(167,139,250,0.25)",
+    items: ["Strategy", "Financial Insights", "Reporting"],
+    icon: "◉",
+  },
+];
+
 export default function About() {
   const ref = useRef<HTMLElement>(null);
 
@@ -51,12 +79,11 @@ export default function About() {
       className="py-28 md:py-40"
       aria-label="About section"
     >
-      {/* ── Split layout ── */}
       <div className="page-padding max-w-screen-xl mx-auto">
 
-        {/* Top section label + heading */}
+        {/* ── FIX: Section number corrected to 01 ── */}
         <div className="mb-16 reveal">
-          <p className="section-label mb-5">02 · About</p>
+          <p className="section-label mb-5">01 · About</p>
           <h2
             className="font-display font-light leading-tight"
             style={{ fontSize: "clamp(2.5rem, 5vw, 5rem)", letterSpacing: "-0.02em" }}
@@ -74,7 +101,7 @@ export default function About() {
         {/* ── Two column ── */}
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
 
-          {/* Left — Bio */}
+          {/* Left — Bio + Capability Pillars */}
           <div className="reveal reveal-delay-1">
             <p className="text-[var(--text-secondary)] leading-relaxed mb-6" style={{ fontSize: "0.92rem" }}>
               I&apos;m a{" "}
@@ -88,28 +115,46 @@ export default function About() {
               results-driven approach to every engagement.
             </p>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-10" style={{ fontSize: "0.92rem" }}>
-              My design philosophy: solve the smallest inconvenience to create the biggest impact.
+              My philosophy: solve the smallest inconvenience to create the biggest impact.
               Turning data complexity into clarity is what drives me every day.
             </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-0 border border-[var(--border)]">
-              {[
-                { n: "15+", l: "Projects" },
-                { n: "3+", l: "Certs" },
-                { n: "2+", l: "Yrs Exp." },
-              ].map((s, i) => (
+            {/* ── FIX: Capability pillars replacing stats ── */}
+            <p className="section-label mb-5">What I Build</p>
+            <div className="space-y-3">
+              {pillars.map((p) => (
                 <div
-                  key={s.l}
-                  className={`p-5 text-center ${i < 2 ? "border-r border-[var(--border)]" : ""}`}
+                  key={p.label}
+                  className="p-4 border"
+                  style={{
+                    borderColor: p.border,
+                    background: p.bg,
+                    transition: "border-color 0.2s",
+                  }}
                 >
-                  <p
-                    className="font-display font-light mb-1"
-                    style={{ fontSize: "2.2rem", color: "var(--accent)", letterSpacing: "-0.03em" }}
-                  >
-                    {s.n}
-                  </p>
-                  <p className="section-label" style={{ fontSize: "0.6rem" }}>{s.l}</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span style={{ color: p.color, fontSize: "0.7rem" }}>{p.icon}</span>
+                    <p
+                      className="font-mono-custom font-medium"
+                      style={{ fontSize: "0.7rem", letterSpacing: "0.1em", color: p.color }}
+                    >
+                      {p.label}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {p.items.map((item) => (
+                      <span
+                        key={item}
+                        className="font-mono-custom text-[var(--text-secondary)]"
+                        style={{ fontSize: "0.68rem", letterSpacing: "0.04em" }}
+                      >
+                        {item}
+                        {p.items.indexOf(item) < p.items.length - 1 && (
+                          <span className="ml-2 text-[var(--text-muted)]">·</span>
+                        )}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -123,10 +168,7 @@ export default function About() {
               <p className="section-label mb-6">Certifications</p>
               <ul className="space-y-3" aria-label="Certifications list">
                 {certifications.map((c) => (
-                  <li
-                    key={c.code}
-                    className="cert-card p-4 flex gap-4 items-start"
-                  >
+                  <li key={c.code} className="cert-card p-4 flex gap-4 items-start">
                     <span
                       className="font-mono-custom shrink-0 mt-0.5"
                       style={{ fontSize: "0.65rem", color: "var(--text-muted)" }}
@@ -152,15 +194,9 @@ export default function About() {
             {/* Skills */}
             <div>
               <p className="section-label mb-5">Tools &amp; Technologies</p>
-              <div
-                className="flex flex-wrap gap-2"
-                role="list"
-                aria-label="Technical skills"
-              >
+              <div className="flex flex-wrap gap-2" role="list" aria-label="Technical skills">
                 {skills.map((s) => (
-                  <span key={s} className="skill-tag" role="listitem">
-                    {s}
-                  </span>
+                  <span key={s} className="skill-tag" role="listitem">{s}</span>
                 ))}
               </div>
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ROLES = [
   "Data Analyst",
@@ -15,7 +15,9 @@ export default function Hero() {
   const [display, setDisplay] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [charIdx, setCharIdx] = useState(0);
+  const orbRef = useRef<HTMLDivElement>(null);
 
+  // ── Typewriter ──────────────────────────────────────────────────────────────
   useEffect(() => {
     const word = ROLES[roleIdx];
     let t: ReturnType<typeof setTimeout>;
@@ -35,47 +37,61 @@ export default function Hero() {
     return () => clearTimeout(t);
   }, [charIdx, deleting, roleIdx]);
 
+  // ── FIX: Orb moves with scroll ──────────────────────────────────────────────
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!orbRef.current) return;
+      const scrollY = window.scrollY;
+      // Orb drifts upward and fades slightly as user scrolls
+      const translateY = -scrollY * 0.35;
+      const opacity = Math.max(0, 1 - scrollY / 600);
+      orbRef.current.style.transform = `translateY(calc(-50% + ${translateY}px))`;
+      orbRef.current.style.opacity = String(opacity);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* ── Planet orb ── */}
-      <div className="planet-orb" aria-hidden="true" />
-
-      {/* ── Subtle bottom gradient blend ── */}
+      {/* ── FIX: Orb with scroll parallax + theme-adaptive colors ── */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+        ref={orbRef}
+        className="planet-orb"
+        aria-hidden="true"
+        style={{ transition: "opacity 0.1s ease" }}
+      />
+
+      {/* ── Bottom gradient blend ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-[1]"
         style={{ background: "linear-gradient(to top, var(--bg), transparent)" }}
         aria-hidden="true"
       />
 
       {/* ── Content ── */}
       <div className="relative z-10 page-padding max-w-screen-xl mx-auto w-full pt-24 pb-20">
-        {/* Eyebrow */}
         <p className="section-label mb-8 reveal visible">
           Data Analytics &amp; AI Development
         </p>
 
-        {/* Main heading — Cormorant serif, large */}
         <h1
           className="font-display font-light leading-[1.05] mb-6 reveal reveal-delay-1 visible"
           style={{ fontSize: "clamp(3rem, 8vw, 7.5rem)", letterSpacing: "-0.02em" }}
         >
           Hi, I&apos;m
           <br />
-          <em
-            className="not-italic"
-            style={{ color: "var(--text)" }}
-          >
+          <em className="not-italic" style={{ color: "var(--text)" }}>
             Krishna Kant
           </em>
           <br />
           <span style={{ color: "var(--text-secondary)" }}>Sahu.</span>
         </h1>
 
-        {/* Divider with typewriter */}
         <div className="flex items-center gap-4 mb-10 reveal reveal-delay-2 visible">
           <div className="w-12 h-px bg-[var(--accent)]" />
           <p
@@ -87,7 +103,6 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Description */}
         <p
           className="max-w-md text-[var(--text-secondary)] leading-relaxed mb-12 reveal reveal-delay-3 visible"
           style={{ fontSize: "0.95rem" }}
@@ -100,15 +115,11 @@ export default function Hero() {
           complex data into intelligent, automated solutions.
         </p>
 
-        {/* CTA buttons */}
         <div className="flex flex-wrap gap-4 reveal reveal-delay-4 visible">
           <a
             href="#projects"
             className="inline-flex items-center gap-2 px-7 py-3 font-body text-sm font-medium tracking-wide"
-            style={{
-              background: "var(--accent)",
-              color: "#0c0c10",
-            }}
+            style={{ background: "var(--accent)", color: "#0c0c10" }}
             aria-label="View my projects"
           >
             View Projects
@@ -125,14 +136,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Scroll hint ── */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        aria-hidden="true"
-      >
-        <div className="w-px h-16 bg-gradient-to-b from-transparent to-[var(--border)]" />
-        <p className="section-label" style={{ fontSize: "0.55rem" }}>Scroll</p>
-      </div>
+      {/* ── FIX: Scroll indicator REMOVED ── */}
     </section>
   );
 }
