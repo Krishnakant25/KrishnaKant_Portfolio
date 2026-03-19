@@ -33,7 +33,7 @@ const dataAnalystProjects: Project[] = [
     title: "EV SALES INSIGHTS DASHBOARD",
     description:
       "Data-driven clarity for the green revolution: AtliQ Motors EV Analytics provides a 360-degree strategic view of the Indian EV landscape, transforming raw registration and revenue data into actionable expansion roadmaps.",
-    tags: ["Python", "FastAPI", "Power BI"],
+    tags: ["Python", "Power BI"],
     image: "/images/AtliQMotors.png",
     liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiZDVlNWRiMTgtMzM2OC00YmJiLWJkMTItYjY3MGVmZTU0NjZhIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
     presentationUrl: "https://drive.google.com/file/d/15EpP-pMTuFO0bkFuIf2s4W0mCZTKodgL/view",
@@ -45,7 +45,7 @@ const dataAnalystProjects: Project[] = [
     title: "VENDOR PERFORMANCE ANALYSIS – RETAIL INVENTORY & SALES",
     description:
       "From p-values to LLMs: this project bridges the gap between deep statistical exploration and the future of AI-driven BI. After identifying key margin disparities in a massive retail dataset, I deployed a local Llama 3.3 agent to automate SQL and visualization via natural language.",
-    tags: ["SQL", "PostgreSQL", "Tableau", "Python", "Pandas"],
+    tags: ["SQL (SQLite, SQLAlchemy)", "Groq AI", "Python (SciPy)", "MCP SDK"],
     image: "/images/VendorsSales.png",
     githubUrl: "https://github.com/krishnakantsahu/sales-dashboard",
     period: "2026",

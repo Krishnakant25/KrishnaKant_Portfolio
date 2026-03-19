@@ -29,7 +29,7 @@ const certifications = [
   },
   {
     code: "05",
-    title: "●	Data Analytics Bootcamp 5.0 - Job Placement Support + AI Automation & Data Engineering",
+    title: "Data Analytics Bootcamp 5.0 - Job Placement Support + AI Automation & Data Engineering",
     issuer: "Codebasics",
     year: "2025",
   },
