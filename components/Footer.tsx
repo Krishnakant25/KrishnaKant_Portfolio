@@ -5,20 +5,20 @@ import { useEffect, useRef } from "react";
 const contacts = [
   {
     label: "Email",
-    value: "krishnakantsahu@example.com",
-    href: "mailto:krishnakantsahu@example.com",
+    value: "krishnakantnew14@gmail.com",
+    href: "mailto:krishnakantnew14@gmail.com",
     sub: "Drop me a line",
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/krishnakantsahu",
-    href: "https://linkedin.com/in/krishnakantsahu",
+    value: "linkedin.com/in/krishna-kant-sahu-ai/",
+    href: "https://www.linkedin.com/in/krishna-kant-sahu-ai/",
     sub: "Let's connect professionally",
   },
   {
     label: "GitHub",
     value: "github.com/krishnakantsahu",
-    href: "https://github.com/krishnakantsahu",
+    href: "https://github.com/Krishnakant25?tab=overview&from=2026-03-01&to=2026-03-19",
     sub: "Browse my repositories",
   },
 ];

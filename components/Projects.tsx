@@ -20,36 +20,33 @@ const dataAnalystProjects: Project[] = [
   {
     num: "01",
     title: "AUTOMATED DATA HEALTH GOVERNANCE SYSTEM",
-    description:
-      "Stop letting 'data debt' compromise your analytics. Data Health Governor automates the tedious cycle of database cleanup by combining LLM-powered detection with a 'Human-in-the-Loop' workflow for ironclad data integrity.",
+    description:"",
     tags: ["n8n", "PostgreSQL", "Groq", "Google Gemini", "Google Docs/Drive"],
-    image: "\images\DataGovernance.png",
+    image: "/images/DataGovernance.png",
     githubUrl: "https://github.com/Krishnakant25/DATA-ANALYTICS/tree/main/Data_Health_Governor",
     period: "2025",
-    type: "Data Analytics",
+    type: "",
   },
   {
     num: "02",
     title: "EV SALES INSIGHTS DASHBOARD",
-    description:
-      "Data-driven clarity for the green revolution: AtliQ Motors EV Analytics provides a 360-degree strategic view of the Indian EV landscape, transforming raw registration and revenue data into actionable expansion roadmaps.",
-    tags: ["Python", "FastAPI", "Power BI"],
-    image: "\images\AtliQMotors.png",
+    description:"",
+    tags: ["Python", "Power BI"],
+    image: "/images/AtliQMotors.png",
     liveUrl: "https://app.powerbi.com/view?r=eyJrIjoiZDVlNWRiMTgtMzM2OC00YmJiLWJkMTItYjY3MGVmZTU0NjZhIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9",
     presentationUrl: "https://drive.google.com/file/d/15EpP-pMTuFO0bkFuIf2s4W0mCZTKodgL/view",
     period: "2025",
-    type: "Data Analytics",
+    type: "",
   },
   {
     num: "03",
     title: "VENDOR PERFORMANCE ANALYSIS – RETAIL INVENTORY & SALES",
-    description:
-      "From p-values to LLMs: this project bridges the gap between deep statistical exploration and AI-driven BI. After identifying key margin disparities in a massive retail dataset, I deployed a local Llama 3.3 agent to automate SQL and visualization via natural language.",
-    tags: ["SQL", "PostgreSQL", "Tableau", "Python", "Pandas"],
-    image: "\images\VendorsSales.png",
+    description:"",
+    tags: ["SQL (SQLite, SQLAlchemy)", "MCP SDK", "Tableau", "Python (Pandas, SciPy)", "Groq API"],
+    image: "/images/VendorsSales.png",
     githubUrl: "https://github.com/krishnakantsahu/sales-dashboard",
     period: "2026",
-    type: "Data Analytics",
+    type: "",
   },
 ];
 
@@ -58,10 +55,9 @@ const genAIProjects: Project[] = [
   {
     num: "01",
     title: "FINANCIAL KNOWLEDGE HYBRID SEARCH",
-    description:
-      "Achieves an 86.7% Hit Rate@5 using hybrid search to replace hours of manual research with sub-300ms retrieval. Fuses BM25 precision with semantic embeddings for scalable, cost-efficient investment research.",
-    tags: ["Hugging Face", "Pinecone", "RAG", "Python", "LangChain"],
-    image: "\images\Thumbnail_Hybrid_Search.png",
+    description:"",
+    tags: ["Hugging Face Transformers", "Pinecone (BM25)", "Wikipedia API", "ArXiv API", "Python", "LangChain"],
+    image: "/images/Thumbnail_Hybrid_Search.png",
     liveUrl: "https://krishnakant25-generativeai-projects-hybrid-searchapp-9h0a6s.streamlit.app/",
     githubUrl: "https://github.com/krishnakantsahu/ai-voice-agent",
     period: "2026",
@@ -70,10 +66,9 @@ const genAIProjects: Project[] = [
   {
     num: "02",
     title: "BUSINESS INTELLIGENCE CHAT ASSISTANT (NL-TO-SQL)",
-    description:
-      "Dual-engine (SQLite/MySQL) interface that maintains full conversational context while ensuring transparent, read-only query execution. Pre-configured for Indian business entities with full SQL audit trail.",
+    description:"",
     tags: ["Python", "LangChain", "GROQ Llama 3.3", "Streamlit", "SQLite / MySQL"],
-    image: "\images\Chat_SQLDB.png",
+    image: "/images/Chat_SQLDB.png",
     liveUrl: "https://generativeaiprojects-vdzwjgbgfzskbwyntgmezc.streamlit.app/",
     githubUrl: "https://github.com/Krishnakant25/GenerativeAI_Projects/tree/main/Chat_With_SQLDB",
     period: "2026",
@@ -122,8 +117,8 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
             onMouseLeave={() => setHoveredIdx(null)}
             className="snap-start shrink-0 relative flex flex-col overflow-hidden border border-[var(--border)] bg-[var(--card)]"
             style={{
-              width: "clamp(280px, 36vw, 420px)",
-              minHeight: "460px",
+              width: "clamp(240px, 28vw, 340px)",
+              minHeight: "400px",
               // Hovered card scales up and comes forward
               transform: isHovered ? "scale(1.03) translateY(-6px)" : "scale(1) translateY(0)",
               // Non-hovered cards blur and dim
@@ -140,7 +135,7 @@ function ProjectCarousel({ projects }: { projects: Project[] }) {
             {/* Thumbnail */}
             <div
               className="relative overflow-hidden"
-              style={{ height: "220px", background: "var(--surface)" }}
+              style={{ height: "180px", background: "var(--surface)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
