@@ -74,6 +74,28 @@ const genAIProjects: Project[] = [
     period: "2026",
     type: "Generative AI",
   },
+  {
+    num: "03",
+    title: "MEMORYOS — DOMAIN-ADAPTIVE AI ASSISTANT WITH PERSISTENT MEMORY & SECURITY",
+    description:"",
+    tags: ["Python", "LangGraph", "Llama 3", "Streamlit", "ChromaDB", "Mem0", "Sentence-Transformers"],
+    image: "/images/MemoryOS.png",
+    liveUrl: "https://generativeaiprojects-ffm8vfrbiyzsqjtvsnwpvo.streamlit.app/",
+    githubUrl: "https://github.com/Krishnakant25/GenerativeAI_Projects/tree/main/MemoryAugmented_AIChatbot",
+    period: "2026",
+    type: "",
+  },
+  {
+    num: "04",
+    title: "FINANCIAL LLM FINE-TUNING & AWS BEDROCK BENCHMARK",
+    description:"",
+    tags: ["Python", "AWS Bedrock", "GPT-4o-mini", "Streamlit", "LoRA/PEFT", "Unsloth", "boto3", "Llama 3.2"],
+    image: "/images/financial_llm_thumbnail_v4.png",
+    liveUrl: "",
+    githubUrl: "https://github.com/Krishnakant25/GenerativeAI_Projects/tree/main/fine_tunning_in%20AWS_Bedrock",
+    period: "2026",
+    type: "",
+  }
 ];
 
 function getPrimaryUrl(p: Project): string {
